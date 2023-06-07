@@ -1,0 +1,66 @@
+{
+    "_id": "chemscene",
+    "startUrl": [
+        "http://localhost:8008"
+    ],
+    "selectors": [
+        {
+            "id": "item",
+            "parentSelectors": [
+                "_root"
+            ],
+            "type": "SelectorElement",
+            "selector": "tbody tr",
+            "multiple": true
+        },
+        {
+            "id": "compound",
+            "parentSelectors": [
+                "item"
+            ],
+            "type": "SelectorText",
+            "selector": "td:nth-of-type(1)",
+            "multiple": false,
+            "regex": ""
+        },
+        {
+            "id": "link",
+            "parentSelectors": [
+                "item"
+            ],
+            "type": "SelectorLink",
+            "selector": "a",
+            "multiple": false
+        },
+        {
+            "id": "name",
+            "parentSelectors": [
+                "link"
+            ],
+            "type": "SelectorText",
+            "selector": "tr:contains('Name:') td",
+            "multiple": false,
+            "regex": ""
+        },
+        {
+            "id": "cas",
+            "parentSelectors": [
+                "link"
+            ],
+            "type": "SelectorText",
+            "selector": "tr:contains('CAS No. :') td",
+            "multiple": false,
+            "regex": ""
+        },
+        {
+            "id": "solubility",
+            "parentSelectors": [
+                "link"
+            ],
+            "type": "SelectorText",
+            "selector": "tr:contains('Solubility:') div",
+            "multiple": false,
+            "regex": ""
+        }
+    ]
+}

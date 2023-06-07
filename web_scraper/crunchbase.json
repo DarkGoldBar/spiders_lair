@@ -1,0 +1,87 @@
+{
+    "_id": "crunchbase",
+    "startUrl": [
+        "http://localhost:8002/root.html"
+    ],
+    "selectors": [
+        {
+            "id": "page",
+            "parentSelectors": [
+                "_root"
+            ],
+            "type": "SelectorLink",
+            "selector": "a",
+            "multiple": true
+        },
+        {
+            "id": "industry",
+            "parentSelectors": [
+                "page"
+            ],
+            "type": "SelectorText",
+            "selector": "chip",
+            "multiple": true,
+            "regex": ""
+        },
+        {
+            "id": "emplyees",
+            "parentSelectors": [
+                "page"
+            ],
+            "type": "SelectorText",
+            "selector": "li:nth-of-type(2) label-with-icon",
+            "multiple": false,
+            "regex": ""
+        },
+        {
+            "id": "funding",
+            "parentSelectors": [
+                "page"
+            ],
+            "type": "SelectorText",
+            "selector": "profile-section.ng-star-inserted fields-card .text_and_value li",
+            "multiple": true,
+            "regex": "(?<=Last Funding Type).*"
+        },
+        {
+            "id": "funding-amount",
+            "parentSelectors": [
+                "page"
+            ],
+            "type": "SelectorText",
+            "selector": ".spacer a",
+            "multiple": true,
+            "regex": "(?<=Total Funding Amount).*"
+        },
+        {
+            "id": "CBRank",
+            "parentSelectors": [
+                "page"
+            ],
+            "type": "SelectorText",
+            "selector": "span a.field-type-integer",
+            "multiple": false,
+            "regex": ""
+        },
+        {
+            "id": "Organization",
+            "parentSelectors": [
+                "page"
+            ],
+            "type": "SelectorText",
+            "selector": "h1",
+            "multiple": false,
+            "regex": ""
+        },
+        {
+            "id": "website",
+            "parentSelectors": [
+                "page"
+            ],
+            "type": "SelectorText",
+            "selector": "span link-formatter a",
+            "multiple": false,
+            "regex": ""
+        }
+    ]
+}
